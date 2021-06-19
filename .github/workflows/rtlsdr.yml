@@ -1,0 +1,19 @@
+name: RTLSDR Container Build
+
+on:
+  push:
+    paths:
+      - 'Dockerfile'
+
+jobs:
+  rtlsdr-container-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Kaniko build rtlsdr
+        uses: aevea/action-kaniko@master
+        with:
+          registry: ghcr.io
+          password: ${{ secrets.GITHUB_TOKEN }}
+          image: joerocklin/rtlsdr
+          build_file: 'Dockerfile'
