@@ -11,4 +11,4 @@ jobs:
         with:
           registry: ghcr.io
           password: ${{ secrets.GITHUB_TOKEN }}
-          image: rtlsdr
+          image: joerocklin/rtlsdr
