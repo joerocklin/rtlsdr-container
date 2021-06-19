@@ -1,14 +1,26 @@
-name: Container Build
+name: Container Builds
 on: push
 
 jobs:
-  container:
+  rtlsdr-container-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Kaniko build
+      - name: Kaniko build rtlsdr
         uses: aevea/action-kaniko@master
         with:
           registry: ghcr.io
           password: ${{ secrets.GITHUB_TOKEN }}
           image: joerocklin/rtlsdr
+          build_file: 'Dockerfile'
+  rtlamr-container-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Kaniko build rtlamr
+        uses: aevea/action-kaniko@master
+        with:
+          registry: ghcr.io
+          password: ${{ secrets.GITHUB_TOKEN }}
+          image: joerocklin/rtlamr
+          build_file: 'rtlamr/Dockerfile'
