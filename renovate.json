@@ -2,5 +2,5 @@
   "extends": [
     "config:base"
   ],
-  "dependencyDashboardAutoclose": true,
+  "dependencyDashboardAutoclose": true
 }
