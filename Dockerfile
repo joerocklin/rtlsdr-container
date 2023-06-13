@@ -1,4 +1,4 @@
-FROM debian:11-slim
+FROM debian:12-slim
 
 RUN apt-get -y update \
   && apt-get install -y --no-install-recommends \
