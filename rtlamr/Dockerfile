@@ -1,4 +1,4 @@
-FROM golang:1.23-alpine AS BUILD
+FROM golang:1.27-alpine AS BUILD
 
 RUN go get -v github.com/bemasher/rtlamr
 
